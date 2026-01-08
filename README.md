@@ -1,3 +1,5 @@
+![THE NERVE Banner](docs/assets/banner.png)
+
 # ⚡ THE NERVE
 
 **A choice-driven cyberpunk RPG for your terminal.**
