@@ -160,14 +160,6 @@ the-nerve/
 
 ---
 
-## 📜 License
-
-**MIT License** - See LICENSE file
-
-Free to use, modify, and distribute. Credit appreciated but not required.
-
----
-
 ## 🙏 Credits
 
 **Design & Development**: S1B Group Development Team
