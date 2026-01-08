@@ -2,6 +2,12 @@
 
 # ⚡ THE NERVE
 
+![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg?style=for-the-badge&logo=python&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
+![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=for-the-badge)
+![Status: Alpha](https://img.shields.io/badge/status-alpha-orange.svg?style=for-the-badge)
+![UI: Rich](https://img.shields.io/badge/UI-Rich-purple.svg?style=for-the-badge)
+
 **A choice-driven cyberpunk RPG for your terminal.**
 
 > _"Connect to THE NERVE. Feel everything."_
