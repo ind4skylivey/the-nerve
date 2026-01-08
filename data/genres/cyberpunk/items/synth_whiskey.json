@@ -1,0 +1,46 @@
+{
+  "item_id": "synth_whiskey",
+  "name": "Synth-Whiskey",
+  "type": "consumable_buff",
+
+  "description": "Cheap synthetic alcohol. Tastes like battery acid mixed with regret. Burns going down, but gets the job done. Label reads 'Oak Barrel Aged' but you're pretty sure it's never seen an oak tree.",
+
+  "icon": "🥃",
+
+  "stats": {
+    "weight": 0.2,
+    "value": 20,
+    "rarity": "common"
+  },
+
+  "effect": {
+    "effect_type": "buff_debuff",
+    "effects": [
+      {
+        "stat": "charisma",
+        "modifier": 2,
+        "duration": 3
+      },
+      {
+        "stat": "intelligence",
+        "modifier": -1,
+        "duration": 3
+      }
+    ],
+    "effect_description": "+2 CHA, -1 INT for 3 turns (liquid courage)"
+  },
+
+  "usage": {
+    "consumable": true,
+    "usable_in_combat": false,
+    "usable_in_exploration": true,
+    "use_text": "You knock back the synth-whiskey. It burns like hell going down. Your vision blurs slightly, but you feel... braver? Or just dumber. Hard to tell.",
+    "success_text": "You feel more confident! (+2 CHA, -1 INT for 3 turns)"
+  },
+
+  "lore": {
+    "manufacturer": "GeneriCorp Beverages",
+    "year": "2198",
+    "flavor_text": "'Oak Barrel Aged' is corpo marketing speak for 'we added brown food coloring to ethanol.'"
+  }
+}

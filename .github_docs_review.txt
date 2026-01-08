@@ -1,0 +1,64 @@
+# DOCS REVIEW FOR GITHUB - THE NERVE
+
+## ✅ SAFE TO PUBLISH (Public Documentation)
+
+1. **ARCHITECTURE.md** (48 KB)
+   - ✅ Technical design document
+   - ✅ No sensitive info
+   - ✅ Good for contributors
+
+2. **GDD.md** (14 KB)
+   - ✅ Game Design Document
+   - ✅ Public game mechanics
+   - ✅ Safe to share
+
+3. **VERTICAL_SLICE.md** (10 KB)
+   - ✅ Development roadmap
+   - ✅ No sensitive info
+   - ✅ Transparent development
+
+4. **BRANDING_UPDATE.md** (3.6 KB)
+   - ✅ Branding guidelines
+   - ✅ Safe to share
+   - ✅ Helps community
+
+## ⚠️  INTERNAL ONLY (Not for GitHub)
+
+5. **REVIEW.md** (17 KB)
+   - ⚠️  Code review with internal metrics
+   - ⚠️  Development process details
+   - ❌ SKIP THIS FILE
+
+6. **SESSION_SUMMARY.md** (5.2 KB)
+   - ⚠️  Internal development log
+   - ⚠️  Session metrics
+   - ❌ SKIP THIS FILE
+
+7. **JSON_STATUS.md** (5.5 KB)
+   - ⚠️  Internal status tracking
+   - ⚠️  Implementation details
+   - ❌ SKIP THIS FILE
+
+8. **VALIDATION_REPORT.md** (3.2 KB)
+   - ⚠️  Internal QA report
+   - ⚠️  Test results
+   - ❌ SKIP THIS FILE
+
+9. **PROGRESS.md** (6.6 KB)
+   - ⚠️  Internal progress tracking
+   - ⚠️  TODO lists
+   - ❌ SKIP THIS FILE
+
+## 📋 RECOMMENDED ACTION
+
+CREATE: docs/.gitignore with:
+```
+# Internal development docs - not for GitHub
+REVIEW.md
+SESSION_SUMMARY.md
+JSON_STATUS.md
+VALIDATION_REPORT.md
+PROGRESS.md
+```
+
+KEEP: Public-facing documentation only

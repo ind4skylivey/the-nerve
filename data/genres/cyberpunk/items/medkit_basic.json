@@ -1,0 +1,36 @@
+{
+  "item_id": "medkit_basic",
+  "name": "Standard Medkit",
+  "type": "consumable_heal",
+
+  "description": "Military-surplus medical kit. Includes synth-skin patches, coagulant gel, and a pre-loaded auto-injector. Expired three years ago, but probably still works. Probably.",
+
+  "icon": "💊",
+
+  "stats": {
+    "weight": 0.5,
+    "value": 100,
+    "rarity": "common"
+  },
+
+  "effect": {
+    "effect_type": "heal",
+    "effect_value": 20,
+    "effect_description": "Restores 20 HP immediately"
+  },
+
+  "usage": {
+    "consumable": true,
+    "usable_in_combat": true,
+    "usable_in_exploration": true,
+    "use_text": "You crack open the medkit and apply the synth-skin patches. The coagulant gel stings as it seals the wounds. Not pretty, but effective.",
+    "success_text": "HP restored: +20",
+    "cooldown": 0
+  },
+
+  "lore": {
+    "manufacturer": "Militech Medical Division",
+    "year": "2193",
+    "flavor_text": "Standard issue for corpo-soldiers. The expiration date is more of a suggestion than a rule."
+  }
+}

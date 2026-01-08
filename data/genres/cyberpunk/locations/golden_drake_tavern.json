@@ -1,0 +1,136 @@
+{
+  "location_id": "golden_drake_tavern",
+  "name": "The Golden Drake",
+  "type": "hub",
+
+  "ascii_art": [
+    "    ╔════════════════════════════╗",
+    "    ║   🍺 THE GOLDEN DRAKE 🍺   ║",
+    "    ╚════════════════════════════╝"
+  ],
+
+  "description": "Holotables flicker with ancient pre-war commercials, their colors bleeding into the cigarette smoke that hangs thick in the air. The bartender—a chrome-armed veteran with a thousand-yard stare—doesn't look up from polishing a cracked glass.\n\nA few patrons huddle in dark booths, their conversations lost beneath the static of a dying radio. The smell of synth-whiskey and desperation lingers.",
+
+  "music_theme": "ambient_noir",
+  "danger_level": 0,
+
+  "exits": {
+    "north": {
+      "target": "tavern_backroom",
+      "description": "A grimy door marked 'PRIVATE' leads further into the building",
+      "locked": false,
+      "key_required": null,
+      "first_time_exit_text": null
+    },
+    "out": {
+      "target": "downtown_streets",
+      "description": "Glass doors lead out to neon-soaked streets",
+      "locked": false,
+      "key_required": null,
+      "first_time_exit_text": "The bartender calls out without looking up: 'Watch yourself out there, choom.'"
+    }
+  },
+
+  "npcs": [
+    {
+      "npc_id": "bartender_tom",
+      "spawn_position": "behind_bar",
+      "spawn_conditions": {
+        "always": true
+      },
+      "dialogue_tree": "dialogue_bartender_intro"
+    },
+    {
+      "npc_id": "mercenary_ariel",
+      "spawn_position": "corner_booth",
+      "spawn_conditions": {
+        "quest_flag": "main_quest_started",
+        "always": false
+      },
+      "dialogue_tree": "dialogue_merc_recruit"
+    }
+  ],
+
+  "objects": [
+    {
+      "object_id": "ale_barrel",
+      "name": "Dented Ale Barrel",
+      "examine_text": "A rusty metal barrel that smells like motor oil mixed with cheap liquor. There's a faded corporate logo barely visible through the grime—'Militech Premium Ale, 2165 Vintage'.",
+      "interactable": true,
+      "actions": {
+        "search": {
+          "first_time_text": "You find an emergency medkit wedged behind the barrel. Someone must have stashed it here and forgotten about it.",
+          "first_time_reward": {
+            "items": ["medkit_basic"]
+          },
+          "repeat_text": "Nothing else here but rust and regret."
+        }
+      }
+    },
+    {
+      "object_id": "notice_board",
+      "name": "Digital Notice Board",
+      "examine_text": "A flickering holoscreen displays various job postings:\n\n[URGENT] Corp security needed - 500¢\n[BOUNTY] Rogue AI in Sector 7 - 1200¢\n[DELIVERY] Discrete package run - 300¢\n\nMost of the postings have 'FILLED' stamped across them in red.",
+      "interactable": true,
+      "actions": {
+        "read": {
+          "trigger": "show_quest_board_ui",
+          "text": "The job board requires level 3+ to access contracts."
+        }
+      }
+    },
+    {
+      "object_id": "jukebox",
+      "name": "Broken Jukebox",
+      "examine_text": "A vintage music player from before the AI Wars. Pre-war tech, when people still trusted machines to hold their memories. The 'A5' button is stuck, endlessly looping the same three-second guitar riff.",
+      "interactable": false
+    },
+    {
+      "object_id": "holotable",
+      "name": "Flickering Holotable",
+      "examine_text": "A corporate advertisement plays on loop: 'Helix Corp - Building Tomorrow's Neural Future.' The hologram glitches, showing a split-second of screaming faces before resetting.",
+      "interactable": false
+    }
+  ],
+
+  "encounters": [
+    {
+      "encounter_id": "tutorial_combat",
+      "trigger": "dialogue_choice_bartender_accept_tutorial",
+      "enemy_groups": [
+        {
+          "enemies": ["street_thug_tutorial"],
+          "count": 1
+        }
+      ],
+      "intro_text": "A wiry thug with gang tattoos steps forward from the shadows, cracking his knuckles. Tom nods approvingly. 'Ricky here owes me a favor. He'll give you a quick lesson in not dying.'\n\nRicky grins, showing a gold tooth. 'Nothing personal, fresh meat. Let's see what you got.'\n\n⚠️ COMBAT INITIATED ⚠️",
+      "on_victory": {
+        "xp": 50,
+        "items": ["credits_50"],
+        "dialogue_continuation": "dialogue_bartender_post_tutorial",
+        "set_flags": ["tutorial_combat_complete"]
+      },
+      "on_defeat": {
+        "game_over": true,
+        "game_over_text": "You collapse on the sticky tavern floor. The last thing you see is Tom shaking his head. 'Not cut out for this life, kid.'\n\n💀 GAME OVER 💀"
+      }
+    }
+  ],
+
+  "ambient_text": [
+    "The jukebox skips on the same guitar riff for the hundredth time.",
+    "Someone laughs bitterly in a far booth, then falls silent.",
+    "Static crackles from the radio, almost forming words.",
+    "The smell of synth-whiskey mixes with ozone and old cigarettes.",
+    "Holographic ads flicker and die on the wall, casting dancing shadows.",
+    "A patron coughs violently, muttering about 'bad neural jacks.'",
+    "The bartender's chrome arm whirs softly as he moves.",
+    "Rain beats against the windows like digital static."
+  ],
+
+  "first_visit_flags": {
+    "set_flags": ["visited_golden_drake"],
+    "dialogue": "dialogue_tavern_first_entrance",
+    "ambient_override": "You push through the glass doors into the smoky interior. Every eye in the place flicks toward you for a split second, then returns to drinks and quiet conversations. Nobody here wants trouble—or at least, nobody wants to start it."
+  }
+}

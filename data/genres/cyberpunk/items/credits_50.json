@@ -1,0 +1,32 @@
+{
+  "item_id": "credits_50",
+  "name": "50 Credits",
+  "type": "currency",
+
+  "description": "Fifty corporate credits. Digital currency backed by... well, nobody really knows anymore. The corps say it's stable. The corps also lie.",
+
+  "icon": "💰",
+
+  "stats": {
+    "weight": 0,
+    "value": 50,
+    "rarity": "common"
+  },
+
+  "effect": {
+    "effect_type": "add_currency",
+    "effect_value": 50,
+    "effect_description": "Adds 50¢ to your credit balance"
+  },
+
+  "usage": {
+    "consumable": true,
+    "auto_consume": true,
+    "use_text": "You pocket the credstick. Balance updated: +50¢"
+  },
+
+  "lore": {
+    "manufacturer": "United Corporate Credit Union",
+    "flavor_text": "In 2199, cash is dead. Everything's digital. Which means the corps can freeze your accounts on a whim. Fun."
+  }
+}

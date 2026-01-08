@@ -1,0 +1,65 @@
+{
+  "npc_id": "bartender_tom",
+  "name": "Tom 'Chrome-Arm' Valdez",
+  "title": "Bartender",
+
+  "description": "A grizzled man in his fifties with a military-grade chrome arm—augmentation from his corpo-soldier days. His eyes have that thousand-yard stare common to war veterans. A faded tattoo on his neck reads 'Semper Fi 2177'.",
+
+  "portrait_ascii": [
+    "    ⚙️👁️",
+    "   /|🥃|\\",
+    "    | |"
+  ],
+
+  "personality": {
+    "traits": ["cynical", "protective", "seen_it_all"],
+    "voice": "Gravelly, short sentences. Low tolerance for bullshit."
+  },
+
+  "stats": {
+    "level": 8,
+    "strength": 14,
+    "dexterity": 10,
+    "intelligence": 12,
+    "charisma": 8,
+    "luck": 6
+  },
+
+  "faction_affiliations": {
+    "veterans_guild": 80,
+    "downtown_locals": 60
+  },
+
+  "merchant_data": {
+    "is_merchant": true,
+    "shop_inventory": [
+      {"item_id": "synth_whiskey", "price": 20, "stock": -1},
+      {"item_id": "medkit_basic", "price": 100, "stock": 3},
+      {"item_id": "info_downtown_map", "price": 50, "stock": 1}
+    ],
+    "discount_conditions": {
+      "charisma_check": {
+        "min_charisma": 12,
+        "discount_percent": 20
+      }
+    }
+  },
+
+  "dialogue_trees": {
+    "default": "dialogue_bartender_intro",
+    "post_tutorial": "dialogue_bartender_regular"
+  },
+
+  "relationship_tracker": {
+    "initial_standing": 0,
+    "max_standing": 100,
+    "current_standing": 0
+  },
+
+  "ambient_dialogue": [
+    "Tom wipes down the bar with mechanical precision.",
+    "He glances at you, then back to his work.",
+    "'You want something, or you just loitering?'",
+    "His chrome arm catches the neon light as he moves."
+  ]
+}

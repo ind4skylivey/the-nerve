@@ -1,0 +1,127 @@
+{
+  "enemy_id": "street_thug_tutorial",
+  "name": "Ricky 'Fast Hands' Chen",
+  "type": "humanoid",
+  "danger_level": 1,
+
+  "description": "A wiry guy in his mid-twenties with gang tattoos covering his neck and forearms. He moves with nervous energy—clearly hopped up on cheap stims or just naturally twitchy. Gold tooth glints when he grins.",
+
+  "stats": {
+    "level": 1,
+    "hp_max": 30,
+    "hp_current": 30,
+    "armor": 2,
+    "evasion": 12,
+
+    "strength": 10,
+    "dexterity": 14,
+    "intelligence": 8,
+    "charisma": 9,
+    "luck": 10
+  },
+
+  "combat_behavior": {
+    "ai_type": "aggressive_melee",
+    "preferred_range": "close",
+    "tactics": [
+      "Rush player on turn 1",
+      "Use Flurry when HP > 50%",
+      "Defend when HP < 30%"
+    ],
+    "special_tactics": [
+      {
+        "name": "Cheap Shot",
+        "trigger_condition": "hp_below_50_percent",
+        "description": "Goes for a dirty kidney punch when desperate",
+        "effect": "extra_damage_5",
+        "chance": 0.3
+      }
+    ]
+  },
+
+  "attacks": [
+    {
+      "attack_id": "punch",
+      "name": "Street Brawl Punch",
+      "type": "melee",
+      "damage_dice": "1d6+2",
+      "hit_bonus": 3,
+      "description": "Ricky throws a quick jab aimed at your jaw. Street-fighting technique—dirty but effective."
+    },
+    {
+      "attack_id": "combo",
+      "name": "Flurry of Blows",
+      "type": "melee",
+      "damage_dice": "2d4+1",
+      "hit_bonus": 1,
+      "cooldown": 2,
+      "description": "A rapid combination of punches—wild and unfocused, but fast. Desperation technique."
+    }
+  ],
+
+  "loot_table": {
+    "guaranteed": [
+      {
+        "item_id": "credits_50",
+        "quantity": 1
+      }
+    ],
+    "random": [
+      {
+        "item_id": "cheap_stim",
+        "chance": 0.3
+      },
+      {
+        "item_id": "switchblade",
+        "chance": 0.15
+      }
+    ]
+  },
+
+  "xp_reward": 50,
+
+  "dialogue": {
+    "on_encounter": "Ricky grins, showing that gold tooth. 'Nothing personal, choom. Just business. Tom said you needed the practice—so here I am, your friendly neighborhood punching bag.'",
+    "on_hit_player": [
+      "'Ha! Too slow!'",
+      "'That all you got, fresh meat?'",
+      "'Tom said you were soft!'",
+      "'Come on, hit me back!'"
+    ],
+    "on_hit_by_player": [
+      "'Agh! Lucky shot!'",
+      "'You little—'",
+      "'Okay, okay, you got skills...'",
+      "'Dammit, that actually hurt!'"
+    ],
+    "on_low_hp": [
+      "'Alright, alright! I'm tapping out!'",
+      "'Okay, you win! Ease up!'",
+      "'Tom! Call it! This one's got hands!'"
+    ],
+    "on_death": "'Alright... alright... I'm done.' He raises his hands in surrender, breathing hard. Blood drips from his nose. 'You win, fresh meat. Tom was right about you. You're gonna do fine in this city.'",
+    "on_player_death": "'Shit... shit! Tom! I think I actually killed them!' Ricky backs away, panic in his voice. 'It was supposed to be non-lethal!'"
+  },
+
+  "tutorial_notes": {
+    "is_tutorial_enemy": true,
+    "non_lethal": true,
+    "surrender_at_hp": 5,
+    "hints_during_combat": [
+      "TIP: Use [Defend] to reduce incoming damage by 50% for one round",
+      "TIP: Watch your HP—use items if you drop below 20",
+      "TIP: Higher DEX gives you better chance to dodge attacks",
+      "TIP: Ricky's using a combo attack! He has lower accuracy but more damage."
+    ],
+    "post_combat_dialogue": {
+      "if_player_won": "Ricky wipes blood from his nose and grins. 'Not bad, choom. Not bad at all. You'll survive this city—assuming you don't do anything stupid.' He limps back to the bar, nodding to Tom.",
+      "if_player_lost": "This shouldn't happen—Ricky surrenders at low HP. If player dies, it's a game over."
+    }
+  },
+
+  "personality": {
+    "traits": ["cocky", "street_smart", "surprisingly_honorable"],
+    "motivations": "Owes Tom a favor, trying to earn street cred",
+    "background": "Local ganger trying to make a name. Respects Tom because Tom saved his life once."
+  }
+}
